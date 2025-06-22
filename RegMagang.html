@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - Magang Aktif</title>
+  <link href="bootstrap-4.1.3-dist/css/bootstrap.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .illustration {
+      background-image: url('coverlog.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+    .form-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    .btn-purple {
+      background-color: #6a0dad;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <img src="coverlog.jpg" alt="Illustration" class="d-md-none w-100">
+    <div class="col-md-6 d-none d-md-block illustration"></div>
+    
+
+    <!-- Right Form -->
+    <div class="col-md-6 form-container">
+      <div class="card w-100" style="max-width: 400px;">
+        <h3 class="text-center fw-bold">Selamat Datang</h3>
+        <p class="text-center text-muted mb-4">di Magang Aktif D3 Teknik Informatika</p>
+
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Masukkan email">
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Masukkan username">
+          </div>
+          <div class="mb-3">
+            <label for="nim" class="form-label">NIM</label>
+            <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Kata Sandi</label>
+            <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi">
+          </div>
+          <button type="submit" class="btn btn-purple w-100">Daftar</button>
+        </form>
+
+        <p class="text-center mt-3">Sudah punya akun? <a href="D:\My Folder\program\html\formloginwebmagang.html" style="color: #6a0dad;">Masuk</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Magang Aktif D3TI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+    }
+
+    .sidebar {
+      background-color: #f0e9f8;
+      color: #6a0dad;
+      width: 240px;
+      min-height: 100vh;
+      padding: 20px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #6a0dad;
+    }
+
+    .sidebar a {
+      color: #4B5563;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #e0d3f0;
+      border-radius: 5px;
+      padding-left: 10px;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .welcome-box {
+      background: linear-gradient(to right, #7c4585, #c95792);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .welcome-box button {
+      background-color: white;
+      color: #c95792;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: #21262d;
+      margin: left;
+    }
+
+    .card p {
+      color: #4B5563;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .card button {
+      background: #FEF9C3;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #78350f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Magang Aktif D3TI</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Pendaftaran Magang</a>
+    <a href="#">Bimbingan</a>
+    <a href="#">Logbook</a>
+    <a href="#">Penilaian</a>
+    <a href="#">Sertifikat</a>
+    <a href="#">View Data</a>
+    <a href="formloginwebmagang.html">Keluar</a>
+  </div>
+
+  <div class="main-content">
+    <div class="welcome-box">
+      <div>
+        <h2>Selamat Datang di Magang Aktif D3TI</h2>
+        <p>Platform terintegrasi untuk mengelola seluruh proses magang mulai dari pendaftaran, bimbingan, hingga penilaian akhir dan sertifikasi.</p><br>
+        <button style="background: white; color: #c95792; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Lihat Panduan</button>
+      </div>
+      
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Pendaftaran Magang</h4>
+        <p>Daftarkan diri Anda untuk program magang di perusahaan pilihan.</p>
+        <button>Belum Mendaftar</button>
+      </div>
+
+      <div class="card">
+        <h4>Bimbingan</h4>
+        <p>Jadwalkan Bimbingan dengan Pembimbing Magang atau Pembimbing Lapangan.</p>
+      </div>
+
+      <div class="card">
+        <h4>Unggah Logbook</h4>
+        <p>Catat dan unggah kegiatan harian Anda selama program magang.</p>
+        <button>0 Logbook</button>
+      </div>
+
+      <div class="card">
+        <h4>Penilaian Perusahaan</h4>
+        <p>Hasil nilai dan evaluasi magang dari Perusahaan untuk mahasiswa magang.</p>
+      </div>
+
+      <div class="card">
+        <h4>Sertifikat</h4>
+        <p>Nilai akhir dan sertifikat dapat di unduh di sini.</p>
+      </div>
+
+      <div class="card">
+        <h4>View Data</h4>
+        <p>Data dan statistik mahasiswa magang Prodi D3TI dapat dipantau disini.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
