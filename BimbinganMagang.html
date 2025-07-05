@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bimbingan Magang D3TI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      overflow-x: hidden;
+    }
+
+    .navbar-custom {
+      background-color: white;
+      padding: 10px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      height: 60px;
+    }
+
+    .navbar-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-title h4 {
+      margin: 0;
+      margin-left: 15px;
+      color: #000;
+      font-weight: normal;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #7C4585;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      background-color: #f0e9f8;
+      width: 220px;
+      min-height: 100vh;
+      padding: 80px 20px 20px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .sidebar a {
+      color: #4B5563;
+      text-decoration: none;
+      display: block;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #e0d3f0;
+      color: #7C4585;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 30px;
+      padding-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding-top: 100px;
+      }
+    }
+
+    .btn-profile {
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .btn-profile img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .status-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(74, 67, 67);
+        font-size: 20px;
+    }
+
+    .bg-purple {
+        background-color: #e4d3f5;
+    }
+
+    .bg-pink {
+        background-color: #f5c0db;
+    }
+
+    .bg-yellow {
+        background-color: #f2e6b8;
+    }
+
+    .status-container .card {
+        flex: 1;
+        min-width: 250px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: white;
+        margin-right: 20px;
+    }
+
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e0d3f0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress {
+      height: 10px;
+      background-color: #7C4585;
+    }
+
+    .form-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .radio-group label {
+      margin-right: 20px;
+    }
+
+    .upload-section {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .upload-section:hover {
+      background-color: #f0e9f8;
+    }
+
+    .btn {
+      background-color: #7C4585;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #693773;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar-custom">
+    <div class="navbar-title">
+      <a href="#" class="navbar-brand">Magang Aktif D3TI</a>
+      <h4>Bimbingan Magang</h4>
+    </div>
+    <div class="dropdown">
+      <button class="btn-profile dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img width="24" height="24" src="https://img.icons8.com/material/24/user-male-circle--v1.png" alt="user-male-circle--v1" alt="Profile"/>
+        <span class="profile-name">Meisya Qeena</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Profil</a></li>
+        <li><a class="dropdown-item" href="#">Keluar</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="DashMagang.html"><i class="bi bi-house-door-fill"></i> Dashboard</a>
+    <a href="FormMagang.html"><i class="bi bi-pencil-square"></i> Daftar Magang</a>
+    <a href="BimbinganMagang.html"><i class="bi bi-people-fill"></i> Bimbingan</a>
+    <a href="LogBookMagang.html"><i class="bi bi-journal-text"></i> Logbook</a>
+    <a href="PenilaianMagang.html"><i class="bi bi-bar-chart-fill"></i> Penilaian</a>
+    <a href="SertifMagang.html"><i class="bi bi-award-fill"></i> Sertifikat</a>
+    <a href="ViewDataMagang.html"><i class="bi bi-table"></i> View Data</a>
+    <a href="LogMagang.html"><i class="bi bi-box-arrow-right"></i> Keluar</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <div class="status-container">
+  <!-- Card Pembimbing Lapangan -->
+  <div class="card shadow-sm">
+    <div class="d-flex align-items-center mb-3">
+      <div class="icon-circle bg-purple me-3">
+        <i class="bi bi-person"></i>
+      </div>
+      <div>
+        <h5 class="mb-1">Pembimbing Lapangan</h5>
+        <small class="text-muted">Nama Pembimbing</small>
+      </div>
+    </div>
+    <div class="mb-2"><i class="bi bi-building me-2"></i>PT GIT Solution</div>
+    <div><i class="bi bi-envelope me-2"></i>email</div>
+  </div>
+
+  <!-- Card Dosen Pembimbing -->
+  <div class="card shadow-sm">
+    <div class="d-flex align-items-center mb-3">
+      <div class="icon-circle bg-pink me-3">
+        <i class="bi bi-person"></i>
+      </div>
+      <div>
+        <h5 class="mb-1">Dosen Pembimbing</h5>
+        <small class="text-muted">Nama Dosen</small>
+      </div>
+    </div>
+    <div class="mb-2"><i class="bi bi-grid me-2"></i>D3 Teknik Informatika</div>
+    <div><i class="bi bi-envelope me-2"></i>email</div>
+  </div>
+
+  <!-- Card Pertemuan Bimbingan -->
+  <div class="card shadow-sm">
+    <div class="d-flex align-items-center mb-3">
+      <div class="icon-circle bg-yellow me-3">
+        <i class="bi bi-calendar-event"></i>
+      </div>
+      <div>
+        <h5 class="mb-1">Pertemuan Bimbingan</h5>
+        <small class="text-muted">Total: 6 pertemuan</small>
+      </div>
+    </div>
+    <div class="mb-2">Pembimbing Lapangan <span class="float-end">4/8</span></div>
+    <div class="progress mb-3" style="height: 8px;">
+      <div class="progress-bar bg-purple" style="width: 50%;"></div>
+    </div>
+    <div class="mb-2">Dosen Pembimbing <span class="float-end">2/4</span></div>
+    <div class="progress" style="height: 8px;">
+      <div class="progress-bar bg-pink" style="width: 50%;"></div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Form Bimbingan -->
+    <div class="form-section">
+      <h2>Ajukan Jadwal Bimbingan Baru</h2>
+      <form id="formBimbingan">
+
+        <div class="form-group">
+          <label>Jenis Bimbingan</label>
+          <div class="radio-group">
+            <label><input type="radio" name="jenis" value="Lapangan" checked> Pembimbing Lapangan</label>
+            <label><input type="radio" name="jenis" value="Dosen"> Dosen Pembimbing</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Metode Bimbingan</label>
+          <select name="metode" class="form-select" required>
+            <option value="Tatap Muka Langsung">Tatap Muka Langsung</option>
+            <option value="Online">Online Via Google Meet</option>
+            <option value="Online">Online Via Zoom</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tanggal Bimbingan</label>
+          <input type="date" name="tanggal" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Waktu Bimbingan</label>
+          <input type="time" name="waktu" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kendala</label>
+          <textarea name="deskripsi" rows="4" class="form-control" placeholder="Jelaskan kendala yang akan dibahas" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Upload File Pendukung</label>
+          <div class="upload-section" onclick="document.getElementById('fileUpload').click()">
+            Drag & drop file di sini, atau <br><strong>Pilih File</strong>
+            <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx,.ppt,.pptx" style="display: none;" onchange="displayFileName(this)">
+            <p id="fileName" style="font-size: 14px; color: #999; margin-top: 10px;">Format: PDF, DOC, DOCX, PPT, PPTX (Maks. 10MB)</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn mt-3">Ajukan Jadwal Bimbingan</button>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    // Form Submission
+    document.getElementById('formBimbingan').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Jadwal Bimbingan Berhasil Diajukan!');
+      e.target.reset();
+      document.getElementById('fileName').textContent = 'Format: PDF, DOC, DOCX, PPT, PPTX (Maks. 10MB)';
+    });
+
+    // Display File Name
+    function displayFileName(input) {
+      const fileName = input.files[0] ? input.files[0].name : 'Format: PDF, DOC, DOCX, PPT, PPTX (Maks. 10MB)';
+      document.getElementById('fileName').textContent = fileName;
+    }
+  </script>
+
+</body>
+
+</html>
