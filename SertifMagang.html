@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sertifikat Magang D3TI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      overflow-x: hidden;
+    }
+
+    .navbar-custom {
+      background-color: white;
+      padding: 10px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      height: 60px;
+    }
+
+    .navbar-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-title h4 {
+      margin: 0;
+      margin-left: 15px;
+      color: #000;
+      font-weight: normal;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #7C4585;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .sidebar {
+      background-color: #f0e9f8;
+      width: 220px;
+      min-height: 100vh;
+      padding: 80px 20px 20px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .sidebar a {
+      color: #4B5563;
+      text-decoration: none;
+      display: block;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #e0d3f0;
+      color: #7C4585;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 30px;
+      padding-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding-top: 100px;
+      }
+    }
+
+    .btn-profile {
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .btn-profile img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .btn {
+      background-color: #7C4585;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #693773;
+    }
+
+    /* Style untuk halaman sertifikat */
+    .final-score {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .final-score .circle {
+      width: 100px;
+      height: 100px;
+      background-color: #7C4585;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 10px;
+    }
+
+    .certificate-status {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .certificate-status .status {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .certificates {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .certificates h3 {
+      margin-bottom: 20px;
+    }
+
+    .certificate-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .certificate-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .certificate-info img {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .download-btn {
+      background-color: #7C4585;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      background-color: #693773;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar-custom">
+    <div class="navbar-title">
+      <a href="#" class="navbar-brand">Magang Aktif D3TI</a>
+      <h4>Logbook Magang</h4>
+    </div>
+    <div class="dropdown">
+      <button class="btn-profile dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img width="24" height="24" src="https://img.icons8.com/material/24/user-male-circle--v1.png" alt="user" />
+        <span class="profile-name">Meisya Qeena</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Profil</a></li>
+        <li><a class="dropdown-item" href="#">Keluar</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="DashMagang.html"><i class="bi bi-house-door-fill"></i> Dashboard</a>
+    <a href="FormMagang.html"><i class="bi bi-pencil-square"></i> Daftar Magang</a>
+    <a href="BimbinganMagang.html"><i class="bi bi-people-fill"></i> Bimbingan</a>
+    <a href="LogBookMagang.html"><i class="bi bi-journal-text"></i> Logbook</a>
+    <a href="PenilaianMagang.html"><i class="bi bi-bar-chart-fill"></i> Penilaian</a>
+    <a href="SertifMagang.html"><i class="bi bi-award-fill"></i> Sertifikat</a>
+    <a href="ViewDataMagang.html"><i class="bi bi-table"></i> View Data</a>
+    <a href="LogMagang.html"><i class="bi bi-box-arrow-right"></i> Keluar</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Nilai Akhir -->
+    <div class="final-score">
+      <div class="circle">87</div>
+      <p>Predikat: Sangat Baik</p>
+      <button class="btn">Ajukan Sertifikat Magang</button>
+    </div>
+
+
+    <!-- Status Pengesahan -->
+    <div class="certificate-status">
+      <div>
+        <strong>Pengesahan Sertifikat</strong>
+        <p class="status-text">Sertifikat memerlukan beberapa proses persetujuan dan pengesahan, silahkan tunggu hingga proses pengesahan selesai.</p>
+        <a href="#" style="color: #6a0dad;" data-bs-toggle="modal" data-bs-target="#detailModal">Lihat Detail »</a>
+      </div>
+      <div class="status">Sudah Disetujui</div>
+    </div>
+
+    <!-- Sertifikat List -->
+    <div class="certificates">
+      <h3>Sertifikat Magang</h3>
+
+      <div class="certificate-item">
+        <div class="certificate-info">
+          <img width="24" height="24" src="https://img.icons8.com/material/24/7c4585/certificate--v2.png" alt="certificate--v2"/>
+          <div>
+            <strong>Sertifikat Magang D3TI</strong>
+            <p>Diterbitkan pada 31 Agustus 2025</p>
+          </div>
+        </div>
+        <button class="download-btn">Unduh PDF</button>
+      </div>
+
+      <div class="certificate-item">
+        <div class="certificate-info">
+          <img width="24" height="24" src="https://img.icons8.com/ios-filled/24/7c4585/company.png" alt="company"/>
+          <div>
+            <strong>Sertifikat PT Teknologi Nusantara</strong>
+            <p>Diterbitkan pada 31 Agustus 2025</p>
+          </div>
+        </div>
+        <button class="download-btn">Unduh PDF</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailModalLabel">Detail Sertifikat</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Sertifikat ini sudah disetujui dan diterbitkan.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</body>
+
+</html>
