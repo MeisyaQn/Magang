@@ -1,77 +1,173 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register - Magang Aktif</title>
-  <link href="bootstrap-4.1.3-dist/css/bootstrap.css" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
     body {
       background-color: #f8f9fa;
     }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
     .illustration {
       background-image: url('coverlog.jpg');
       background-size: cover;
       background-position: center;
-      height: 100vh;
+      width: 100%;
+      height: 250px;
     }
+
+    @media (min-width: 768px) {
+      .illustration {
+        display: block;
+        width: 50%;
+        height: 100vh;
+      }
+    }
+
     .form-container {
-      min-height: 100vh;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 2rem;
     }
+
+    @media (min-width: 768px) {
+      .form-container {
+        width: 50%;
+      }
+    }
+
     .card {
-      border: none;
+      background-color: #fff;
       border-radius: 1rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       padding: 2rem;
+      width: 100%;
+      max-width: 400px;
     }
-    .btn-purple {
+
+    .card h3 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0.75rem;
       background-color: #6a0dad;
       color: white;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .btn:hover {
+      background-color: #5a0cab;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-3 {
+      margin-top: 1rem;
+    }
+
+    a {
+      color: #6a0dad;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+  <!-- Mobile Image -->
+  <div class="illustration d-md-none"></div>
 
-    <img src="coverlog.jpg" alt="Illustration" class="d-md-none w-100">
-    <div class="col-md-6 d-none d-md-block illustration"></div>
-    
+  <!-- Form Register -->
+  <div class="form-container">
+    <div class="card">
+      <h3>Selamat Datang</h3>
+      <p>di Magang Aktif D3 Teknik Informatika</p>
 
-    <!-- Right Form -->
-    <div class="col-md-6 form-container">
-      <div class="card w-100" style="max-width: 400px;">
-        <h3 class="text-center fw-bold">Selamat Datang</h3>
-        <p class="text-center text-muted mb-4">di Magang Aktif D3 Teknik Informatika</p>
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Masukkan email" required>
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" required>
+        </div>
+        <div class="form-group">
+          <label for="nim">NIM</label>
+          <input type="text" id="nim" placeholder="Masukkan NIM" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Kata Sandi</label>
+          <input type="password" id="password" placeholder="Masukkan kata sandi" required>
+        </div>
+        <button type="submit" class="btn">Daftar</button>
+      </form>
 
-        <form>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Masukkan email">
-          </div>
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Masukkan username">
-          </div>
-          <div class="mb-3">
-            <label for="nim" class="form-label">NIM</label>
-            <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM">
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Kata Sandi</label>
-            <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi">
-          </div>
-          <button type="submit" class="btn btn-purple w-100">Daftar</button>
-        </form>
-
-        <p class="text-center mt-3">Sudah punya akun? <a href="D:\My Folder\program\html\formloginwebmagang.html" style="color: #6a0dad;">Masuk</a></p>
-      </div>
+      <p class="text-center mt-3">
+        Sudah punya akun? 
+        <a href="LogMagang.html">Masuk</a>
+      </p>
     </div>
   </div>
+
+  
 </div>
 
 </body>
