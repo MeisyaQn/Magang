@@ -275,7 +275,7 @@
             <p>Diterbitkan pada 31 Agustus 2025</p>
           </div>
         </div>
-        <button class="download-btn" onclick="downloadPDF1()">Unduh PDF</a>
+        <button class="download-btn" onclick="downloadPDF1()">Unduh PDF</button>
       </div>
 
       <div class="certificate-item">
@@ -320,8 +320,8 @@
   }
    function downloadPDF2() {
     const link = document.createElement('a');
-    link.href='SertifikatMagang.pdf';
-    link.download ='SertifikatMagang.pdf';
+    link.href='SertifPembimbing.pdf';
+    link.download ='SertifPembimbing.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
