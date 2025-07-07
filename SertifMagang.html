@@ -275,18 +275,18 @@
             <p>Diterbitkan pada 31 Agustus 2025</p>
           </div>
         </div>
-        <button class="download-btn">Unduh PDF</button>
+        <button class="download-btn" onclick="downloadPDF1()">Unduh PDF</a>
       </div>
 
       <div class="certificate-item">
         <div class="certificate-info">
           <img width="24" height="24" src="https://img.icons8.com/ios-filled/24/7c4585/company.png" alt="company"/>
           <div>
-            <strong>Sertifikat PT Teknologi Nusantara</strong>
+            <strong>Sertifikat PT Kode Kolektif Indonesia</strong>
             <p>Diterbitkan pada 31 Agustus 2025</p>
           </div>
         </div>
-        <a href="SertifikatMagang.pdf" download class="download-btn">Unduh PDF</a>
+        <button class="download-btn" onclick="downloadPDF2()">Unduh PDF</button>
       </div>
     </div>
 
@@ -309,7 +309,17 @@
   </div>
 
   </div>
-
+<script>
+  function downloadPDF1() {
+    const link = document.createElement('a');
+    link.href='SertifikatMagang.pdf';
+    link.download ='SertifikatMagang.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
 </body>
+  
 
 </html>
