@@ -318,6 +318,14 @@
     link.click();
     document.body.removeChild(link);
   }
+   function downloadPDF2() {
+    const link = document.createElement('a');
+    link.href='SertifikatMagang.pdf';
+    link.download ='SertifikatMagang.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 </script>
 </body>
   
